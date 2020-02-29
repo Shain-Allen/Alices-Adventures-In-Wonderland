@@ -9,7 +9,7 @@ public class SpawnPointController : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        int r = Random.Range(0, Enemys.Length - 1);
+        int r = Random.Range(0, Enemys.Length);
 
         Instantiate(Enemys[0], transform.position, Quaternion.identity);
     }

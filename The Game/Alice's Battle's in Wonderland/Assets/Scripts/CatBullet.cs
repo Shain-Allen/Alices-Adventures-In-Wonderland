@@ -15,12 +15,13 @@ public class CatBullet : MonoBehaviour
     {
         Target = GameObject.Find("Alice temp").GetComponent<Transform>();
 
-        pathToTarget = Target.position - transform.position;
+        pathToTarget = (transform.position - Target.position).normalized;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Debug.DrawLine(transform.position, Target.position);
+        rb.AddForce(pathToTarget * speed, ForceMode2D.Impulse);
+
+        Debug.DrawLine(transform.position, pathToTarget);
     }
 }

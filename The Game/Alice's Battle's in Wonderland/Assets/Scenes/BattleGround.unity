@@ -233,7 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df7714f43a513045af115392cccd156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawners: []
+  enemySpawners:
+  - {fileID: 1453389995}
   spawnIntervel: 5
 --- !u!4 &949905573
 Transform:
@@ -385,6 +386,12 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.53289473
+--- !u!1 &1453389995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7942936095084434593, guid: 6b520c3440b9ee64ea072621f3a40027,
+    type: 3}
+  m_PrefabInstance: {fileID: 4275230625172471209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4275230625172471209
 PrefabInstance:
   m_ObjectHideFlags: 0
