@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CatBullet : MonoBehaviour
 {
-    public float speed;
-    public Rigidbody2D rb;
+    public float speed = 2;
+    private Rigidbody2D rb;
 
     Transform Target;
     Vector2 pathToTarget;
@@ -13,15 +13,15 @@ public class CatBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Target = GameObject.Find("Alice temp").GetComponent<Transform>();
+        rb = GetComponent<Rigidbody2D>();
 
-        pathToTarget = (transform.position - Target.position).normalized;
+        Target = GameObject.FindGameObjectWithTag("Player").transform;
+
+        pathToTarget = (Target.position - transform.position).normalized;
     }
 
-    private void Update()
+    void FixedUpdate()
     {
-        rb.AddForce(pathToTarget * speed, ForceMode2D.Impulse);
-
-        Debug.DrawLine(transform.position, pathToTarget);
+        rb.AddForce(pathToTarget * speed, ForceMode2D.Force);
     }
 }
