@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frecency: 5
-  amplitude: 5
+  amplitude: 2
   speed: 100
 --- !u!212 &1435266836
 SpriteRenderer:

@@ -31,7 +31,7 @@ public class MadHatter : MonoBehaviour
         float x = rb.transform.position.x;
         float y = rb.transform.position.y;
 
-        x = x + Mathf.Cos(angle + Mathf.Sin(Time.deltaTime * speed) * frecency) * amplitude * Time.deltaTime;
+        x = x - Mathf.Cos(angle + Mathf.Sin(Time.deltaTime * speed) * frecency) * amplitude * Time.deltaTime;
         y = y + Mathf.Sin(angle + Mathf.Sin(Time.deltaTime * speed) * frecency) * amplitude * Time.deltaTime;
 
         rb.MovePosition(new Vector2(x, y));
