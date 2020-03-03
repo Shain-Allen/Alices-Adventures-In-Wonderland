@@ -38,6 +38,6 @@ public class CatBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Debug.Log(lifeTimeLeft);
+        //Debug.Log(lifeTimeLeft);
     }
 }

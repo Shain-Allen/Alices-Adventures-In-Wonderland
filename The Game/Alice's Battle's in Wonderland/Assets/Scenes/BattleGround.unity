@@ -814,7 +814,7 @@ MonoBehaviour:
   - {fileID: 414199529}
   - {fileID: 2022561741}
   - {fileID: 171533010}
-  spawnIntervel: 5
+  spawnIntervel: 100000
 --- !u!4 &949905573
 Transform:
   m_ObjectHideFlags: 0
@@ -1037,8 +1037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frecency: 5
-  amplitude: 0.3
-  speed: 20
+  amplitude: 5
+  speed: 100
 --- !u!212 &1435266836
 SpriteRenderer:
   m_ObjectHideFlags: 0
