@@ -5,9 +5,9 @@ using UnityEngine;
 public class MadHatter : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float frecency = 1.0f;
+    public float frequency = 1.0f;
     public float amplitude = 1.0f;
-    public float speed = 5.0f;
+    public float speed = 1.0f;
 
     Transform Target;
     Vector2 pathToTarget;
@@ -28,12 +28,17 @@ public class MadHatter : MonoBehaviour
     {
         angle = Mathf.Atan2(pathToTarget.y, pathToTarget.x);
 
-        float x = rb.transform.position.x;
-        float y = rb.transform.position.y;
+        //create base sine wave with desired Frequency
+        Vector2 sinWave = new Vector2(0.0f, Mathf.Sin(Time.deltaTime * frequency)) * amplitude;
 
-        x = x - Mathf.Cos(angle + Mathf.Sin(Time.deltaTime * speed) * frecency) * amplitude * Time.deltaTime;
-        y = y + Mathf.Sin(angle + Mathf.Sin(Time.deltaTime * speed) * frecency) * amplitude * Time.deltaTime;
+        //Rotate by target angle
+        sinWave = Quaternion.Euler(new Vector3(0, 0, angle)) * sinWave;
 
-        rb.MovePosition(new Vector2(x, y));
+        //modify pathToTarget using sin wave as offset
+        pathToTarget += sinWave;
+
+        //change velocity accordingly
+        rb.velocity = pathToTarget * speed;
+
     }
 }
