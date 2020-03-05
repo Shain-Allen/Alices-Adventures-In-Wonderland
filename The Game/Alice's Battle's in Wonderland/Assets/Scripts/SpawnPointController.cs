@@ -11,6 +11,6 @@ public class SpawnPointController : MonoBehaviour
     {
         int r = Random.Range(0, Enemys.Length);
 
-        Instantiate(Enemys[0], transform.position, Quaternion.identity);
+        Instantiate(Enemys[r], transform.position, Quaternion.identity);
     }
 }

@@ -19,11 +19,11 @@ public class EnemySpawnManager : MonoBehaviour
     {
         timeTillNextSpawn -= Time.deltaTime;
 
-        if (timeTillNextSpawn <= 0)
+        if (timeTillNextSpawn <= 0f)
         {
             int r = Random.Range(0, enemySpawners.Length);
 
-            enemySpawners[0].GetComponent<SpawnPointController>().SpawnEnemy();
+            enemySpawners[r].GetComponent<SpawnPointController>().SpawnEnemy();
 
             timeTillNextSpawn = spawnIntervel;
         }
