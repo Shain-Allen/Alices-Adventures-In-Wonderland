@@ -7,6 +7,7 @@ public class QueenMovement : MonoBehaviour
     public float speed = 5f;
     Vector3 pathToTarget;
     Vector2 growPoint;
+    Vector3 Center = new Vector3(0, 0, 0);
     Transform target;
     Rigidbody2D rb;
     Animator anim;
@@ -16,7 +17,7 @@ public class QueenMovement : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
-        pathToTarget = target.position - transform.position;
+        pathToTarget = Center - transform.position;
         growPoint = transform.position + (pathToTarget / 2f);
         anim = GetComponent<Animator>();
     }
