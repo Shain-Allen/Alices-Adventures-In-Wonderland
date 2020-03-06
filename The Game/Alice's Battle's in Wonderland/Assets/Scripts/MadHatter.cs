@@ -28,14 +28,13 @@ public class MadHatter : MonoBehaviour
     {
         angle = Mathf.Atan2(pathToTarget.y, pathToTarget.x);
 
+        angle = Mathf.Rad2Deg * angle;
+
         //create base sine wave with desired Frequency
-        Vector2 sinWave = new Vector2(0.0f, Mathf.Sin(Time.deltaTime * frequency)) * amplitude;
+        Vector2 sinWave = new Vector2(0.0f, Mathf.Sin(Time.timeSinceLevelLoad * frequency)) * amplitude;
 
         //Rotate by target angle
         sinWave = Quaternion.Euler(new Vector3(0, 0, angle)) * sinWave;
-
-        //modify pathToTarget using sin wave as offset
-        pathToTarget += sinWave;
 
         //change velocity accordingly
         rb.velocity = pathToTarget * speed;
