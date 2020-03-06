@@ -37,7 +37,7 @@ public class MadHatter : MonoBehaviour
         sinWave = Quaternion.Euler(new Vector3(0, 0, angle)) * sinWave;
 
         //change velocity accordingly
-        rb.velocity = pathToTarget * speed;
+        rb.velocity = (pathToTarget + sinWave) * speed;
 
     }
 }
