@@ -6,6 +6,7 @@ public class CatBullet : MonoBehaviour
 {
     public float speed = 2;
     public float lifetime = 5;
+    public float damageDelt = 1;
     private Rigidbody2D rb;
 
     Transform Target;
@@ -39,5 +40,13 @@ public class CatBullet : MonoBehaviour
         }
 
         //Debug.Log(lifeTimeLeft);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<AliceStatControll>().TakeDamage(damageDelt);
+        }
     }
 }
