@@ -5,25 +5,26 @@ using UnityEngine.UI;
 
 public class AliceStatControll : MonoBehaviour
 {
-    public float startingHealth = 3f;
-    public float startingSizeScale = 1f;
-    public float scaleChangeDuration = 5.0f;
-    public float currenthealth;
-    public float maxHealth;
+    //health stuff
+    public int health;
+    public int numOfHearts;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    //size stuff
+    public float startingSizeScale = 1f;
+    public float scaleChangeDuration = 5.0f;
     float currentSizeScale;
     public float nextSizeScale;
+
+    //other stuff
     float starttime;
 
     private void Start()
     {
-        currenthealth = startingHealth;
         currentSizeScale = startingSizeScale;
         nextSizeScale = startingSizeScale;
-        maxHealth = startingHealth;
 
         starttime = Time.time;
     }
@@ -37,9 +38,38 @@ public class AliceStatControll : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    private void Update()
     {
-        currenthealth -= damage;
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (health > numOfHearts)
+            {
+                health = numOfHearts;
+            }
+
+            if (i < health)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else
+            {
+                hearts[i].sprite = emptyHeart;
+            }
+
+            if(i < numOfHearts)
+            {
+                hearts[i].enabled = true;
+            }
+            else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
     }
 
     public void ChangeSize(float NewSize)

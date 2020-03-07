@@ -8,6 +8,7 @@ public class MadHatter : MonoBehaviour
     public float frequency = 1.0f;
     public float amplitude = 1.0f;
     public float speed = 1.0f;
+    public int damage = 1;
 
     Transform Target;
     Vector2 pathToTarget;
@@ -39,5 +40,13 @@ public class MadHatter : MonoBehaviour
         //change velocity accordingly
         rb.velocity = (pathToTarget + sinWave) * speed;
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            other.GetComponent<AliceStatControll>().TakeDamage(damage);
+        }
     }
 }

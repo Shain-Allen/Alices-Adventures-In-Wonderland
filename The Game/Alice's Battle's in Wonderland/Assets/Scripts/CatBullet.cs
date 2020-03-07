@@ -6,7 +6,7 @@ public class CatBullet : MonoBehaviour
 {
     public float speed = 2;
     public float lifetime = 5;
-    public float damageDelt = 1;
+    public int damageDelt = 1;
     private Rigidbody2D rb;
 
     Transform Target;

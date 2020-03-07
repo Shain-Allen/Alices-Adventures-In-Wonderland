@@ -10,6 +10,9 @@ public class EnemySpawnManager : MonoBehaviour
     public float spawnIntervel = 5.0f;
     float timeTillNextSpawn;
 
+    //only let there be one queen on screen at a time
+    public int numOfQueens = 0;
+
     private void Start()
     {
         timeTillNextSpawn = spawnIntervel;
