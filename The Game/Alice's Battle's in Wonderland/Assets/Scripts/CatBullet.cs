@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CatBullet : MonoBehaviour
 {
-    public float speed = 2;
+    public float speed = 2f;
     public float lifetime = 5;
     public int damageDelt = 1;
     private Rigidbody2D rb;
 
-    Transform Target;
+    Transform target;
     Vector2 pathToTarget;
     float lifeTimeLeft;
 
@@ -18,16 +18,16 @@ public class CatBullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        Target = GameObject.FindGameObjectWithTag("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        pathToTarget = (Target.position - transform.position).normalized;
+        pathToTarget = (target.position - transform.position).normalized;
 
         lifeTimeLeft = lifetime;
     }
 
     void FixedUpdate()
     {
-        rb.AddForce(pathToTarget * speed, ForceMode2D.Force);
+        rb.AddForce(pathToTarget * speed , ForceMode2D.Force);
     }
 
     private void Update()

@@ -40,6 +40,22 @@ public class AliceStatControll : MonoBehaviour
 
     private void Update()
     {
+        heartControl();
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
+
+    public void ChangeSize(float NewSize)
+    {
+        nextSizeScale = currentSizeScale;
+        nextSizeScale += NewSize;
+    }
+
+    void heartControl()
+    {
         for (int i = 0; i < hearts.Length; i++)
         {
             if (health > numOfHearts)
@@ -56,7 +72,7 @@ public class AliceStatControll : MonoBehaviour
                 hearts[i].sprite = emptyHeart;
             }
 
-            if(i < numOfHearts)
+            if (i < numOfHearts)
             {
                 hearts[i].enabled = true;
             }
@@ -65,16 +81,5 @@ public class AliceStatControll : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-    }
-
-    public void ChangeSize(float NewSize)
-    {
-        nextSizeScale = currentSizeScale;
-        nextSizeScale += NewSize;
     }
 }
