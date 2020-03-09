@@ -145,3 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   lifetime: 5
+  damageDelt: 1
+  stats: {fileID: 11400000, guid: 67c3a3b96d16b5c4598c9c2772264c14, type: 2}

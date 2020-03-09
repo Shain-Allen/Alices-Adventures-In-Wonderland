@@ -7,8 +7,7 @@ public class MadHatter : MonoBehaviour
     private Rigidbody2D rb;
     public float frequency = 1.0f;
     public float amplitude = 1.0f;
-    public float speed = 1.0f;
-    public int damage = 1;
+    public Enemys madHatter;
 
     Transform Target;
     Vector2 pathToTarget;
@@ -38,7 +37,7 @@ public class MadHatter : MonoBehaviour
         sinWave = Quaternion.Euler(new Vector3(0, 0, angle)) * sinWave;
 
         //change velocity accordingly
-        rb.velocity = (pathToTarget + sinWave) * speed;
+        rb.velocity = (pathToTarget + sinWave) * madHatter.speed;
 
     }
 
@@ -46,7 +45,7 @@ public class MadHatter : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<AliceStatControll>().TakeDamage(damage);
+            other.GetComponent<AliceStatControll>().TakeDamage(madHatter.damage);
         }
     }
 }

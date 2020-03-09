@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Item", menuName = "New Item")]
+[CreateAssetMenu(fileName = "Item", menuName = "AAIW/New Item")]
 public class Items : ScriptableObject
 {
-    public float speed;
-    public float despawnTime;
+    public float speed = 2;
+    public float despawnTime = 5;
     public int maxHealthChange;
     public int healthChange;
     public int sizeChange;

@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4445317eeba6c054baef455f3aae49ec, type: 3}
-  m_Name: DrinkMeBottle
+  m_Script: {fileID: 11500000, guid: 544ac22f75ec37e4897434cc554a9ef2, type: 3}
+  m_Name: Queen
   m_EditorClassIdentifier: 
   speed: 2
   despawnTime: 5
-  maxHealthChange: -1
-  healthChange: 1
-  sizeChange: 0
+  damage: 1
