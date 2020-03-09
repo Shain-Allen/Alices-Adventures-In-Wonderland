@@ -9,5 +9,5 @@ public class Items : ScriptableObject
     public float despawnTime;
     public int maxHealthChange;
     public int healthChange;
-    public float sizeChange;
+    public int sizeChange;
 }

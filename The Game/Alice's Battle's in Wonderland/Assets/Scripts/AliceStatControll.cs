@@ -5,15 +5,20 @@ using UnityEngine.UI;
 
 public class AliceStatControll : MonoBehaviour
 {
+    //public component references
+    public Animator anim;
+
     //health stuff
-    public int health;
-    public int numOfHearts;
+    [SerializeField]
+    int health = 3;
+    [SerializeField]
+    int numOfHearts = 3;
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
     //size stuff
-    
+    int size = 0;
 
     //other stuff
     float starttime;
@@ -23,19 +28,37 @@ public class AliceStatControll : MonoBehaviour
         starttime = Time.time;
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     private void Update()
     {
         heartControl();
+        anim.SetInteger("Size", size);
+    }
+
+    public void IncreaseNumOfHearts(int boost)
+    {
+        if (numOfHearts < hearts.Length)
+        {
+            numOfHearts += boost;
+        }
+        HealthBoost(boost);
+    }
+
+    public void HealthBoost(int boost)
+    {
+        if(health < numOfHearts)
+        {
+            health += boost;
+        }
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+    }
+
+    public void ChangeSize(int _size)
+    {
+        size += _size;
     }
 
     void heartControl()
