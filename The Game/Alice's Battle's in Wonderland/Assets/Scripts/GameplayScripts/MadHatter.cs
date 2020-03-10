@@ -12,6 +12,7 @@ public class MadHatter : MonoBehaviour
     Transform Target;
     Vector2 pathToTarget;
     float angle;
+    float despawnTime;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +22,18 @@ public class MadHatter : MonoBehaviour
         Target = GameObject.FindGameObjectWithTag("Player").transform;
 
         pathToTarget = (Target.position - transform.position).normalized;
+
+        despawnTime = madHatter.despawnTime;
     }
 
     // Update is called once per frame
     void Update()
     {
+        despawnTime -= Time.deltaTime;
+
+        if (despawnTime <= 0)
+            Destroy(gameObject);
+
         angle = Mathf.Atan2(pathToTarget.y, pathToTarget.x);
 
         angle = Mathf.Rad2Deg * angle;
@@ -38,7 +46,6 @@ public class MadHatter : MonoBehaviour
 
         //change velocity accordingly
         rb.velocity = (pathToTarget + sinWave) * madHatter.speed;
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

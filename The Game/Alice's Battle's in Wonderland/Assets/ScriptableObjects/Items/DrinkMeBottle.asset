@@ -16,4 +16,4 @@ MonoBehaviour:
   despawnTime: 5
   maxHealthChange: -1
   healthChange: 1
-  sizeChange: 0
+  sizeChange: -1

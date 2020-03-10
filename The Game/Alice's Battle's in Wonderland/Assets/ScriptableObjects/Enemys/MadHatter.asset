@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MadHatter
   m_EditorClassIdentifier: 
   speed: 2
-  despawnTime: 5
+  despawnTime: 10
   damage: 1

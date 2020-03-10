@@ -40,7 +40,8 @@ public class AliceStatControll : MonoBehaviour
         {
             numOfHearts += boost;
         }
-        HealthBoost(boost);
+        if(boost > -1)
+            HealthBoost(boost);
     }
 
     public void HealthBoost(int boost)
