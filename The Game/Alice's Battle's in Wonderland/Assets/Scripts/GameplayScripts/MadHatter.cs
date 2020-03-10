@@ -52,7 +52,7 @@ public class MadHatter : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            other.GetComponent<AliceStatControll>().TakeDamage(madHatter.damage);
+            other.GetComponent<AliceStatControll>().TakeDamage(madHatter.damage, madHatter.sound);
         }
     }
 }

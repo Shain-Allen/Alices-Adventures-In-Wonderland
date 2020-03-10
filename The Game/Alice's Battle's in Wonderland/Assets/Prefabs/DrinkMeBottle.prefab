@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottle: {fileID: 11400000, guid: c13005505226f574c854f388d7fa86e6, type: 2}
+  shrink: {fileID: 8300000, guid: cf8adaf89648391418e3a8680b940e62, type: 3}

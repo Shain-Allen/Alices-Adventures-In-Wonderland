@@ -43,7 +43,7 @@ public class DrinkMeBottle : MonoBehaviour
         {
             AliceStatControll player = other.GetComponent<AliceStatControll>();
 
-            player.ChangeSize(bottle.sizeChange);
+            player.ChangeSize(bottle.sizeChange, bottle.sound);
             player.HealthBoost(bottle.healthChange);
             player.IncreaseNumOfHearts(bottle.maxHealthChange);
             Destroy(gameObject);

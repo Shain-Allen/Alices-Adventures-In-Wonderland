@@ -20,6 +20,9 @@ public class AliceStatControll : MonoBehaviour
     //size stuff
     int size = 0;
 
+    //sound stuff
+    public AudioSource aSource;
+
     //other stuff
     float starttime;
 
@@ -52,14 +55,16 @@ public class AliceStatControll : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, AudioClip sound)
     {
         health -= damage;
+        aSource.PlayOneShot(sound);
     }
 
-    public void ChangeSize(int _size)
+    public void ChangeSize(int _size, AudioClip sound)
     {
         size += _size;
+        aSource.PlayOneShot(sound);
     }
 
     void heartControl()

@@ -44,7 +44,7 @@ public class CatBullet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<AliceStatControll>().TakeDamage(stats.damage);
+            other.GetComponent<AliceStatControll>().TakeDamage(stats.damage, stats.sound);
         }
     }
 }

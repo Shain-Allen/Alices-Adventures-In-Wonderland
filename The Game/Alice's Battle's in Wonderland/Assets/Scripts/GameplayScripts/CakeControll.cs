@@ -42,7 +42,7 @@ public class CakeControll : MonoBehaviour
     {
         AliceStatControll player = GameObject.FindGameObjectWithTag("Player").GetComponent<AliceStatControll>();
         player.IncreaseNumOfHearts(cake.maxHealthChange);
-        player.ChangeSize(cake.sizeChange);
+        player.ChangeSize(cake.sizeChange, cake.sound);
         Destroy(gameObject);
     }
 }
