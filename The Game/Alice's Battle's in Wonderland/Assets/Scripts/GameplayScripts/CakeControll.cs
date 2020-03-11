@@ -41,8 +41,9 @@ public class CakeControll : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         AliceStatControll player = GameObject.FindGameObjectWithTag("Player").GetComponent<AliceStatControll>();
-        player.IncreaseNumOfHearts(cake.maxHealthChange);
-        player.ChangeSize(cake.sizeChange, cake.sound);
+        player.IncreaseNumOfHearts(cake.maxHealthChange, cake.sound[1]);
+        player.HealthBoost(cake.healthChange);
+        player.ChangeSize(cake.sizeChange, cake.sound[0]);
         Destroy(gameObject);
     }
 }

@@ -17,4 +17,6 @@ MonoBehaviour:
   maxHealthChange: -1
   healthChange: 1
   sizeChange: -1
-  sound: {fileID: 8300000, guid: cf8adaf89648391418e3a8680b940e62, type: 3}
+  sound:
+  - {fileID: 8300000, guid: cf8adaf89648391418e3a8680b940e62, type: 3}
+  - {fileID: 8300000, guid: bcc588676edc0524ba71a05d30828267, type: 3}

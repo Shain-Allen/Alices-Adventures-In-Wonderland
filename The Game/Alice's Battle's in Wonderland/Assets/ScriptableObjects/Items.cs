@@ -10,5 +10,5 @@ public class Items : ScriptableObject
     public int maxHealthChange;
     public int healthChange;
     public int sizeChange;
-    public AudioClip sound;
+    public AudioClip[] sound;
 }

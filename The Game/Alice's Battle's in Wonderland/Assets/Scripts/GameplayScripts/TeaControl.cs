@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrinkMeBottle : MonoBehaviour
+public class TeaControl : MonoBehaviour
 {
-    public Items bottle;
+    public Items teaTime;
 
     Rigidbody2D rb;
     Transform target;
@@ -19,12 +19,12 @@ public class DrinkMeBottle : MonoBehaviour
 
         pathToTarget = (target.position - transform.position).normalized;
 
-        despawnTime = bottle.despawnTime;
+        despawnTime = teaTime.despawnTime;
     }
 
     private void FixedUpdate()
     {
-        rb.AddForce(pathToTarget * bottle.speed, ForceMode2D.Force);
+        rb.AddForce(pathToTarget * teaTime.speed, ForceMode2D.Force);
     }
 
     private void Update()
@@ -41,11 +41,7 @@ public class DrinkMeBottle : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            AliceStatControll player = other.GetComponent<AliceStatControll>();
-
-            player.ChangeSize(bottle.sizeChange, bottle.sound[0]);
-            player.HealthBoost(bottle.healthChange, bottle.sound[0]);
-            player.IncreaseNumOfHearts(bottle.maxHealthChange);
+            other.GetComponent<AliceStatControll>().HealthBoost(teaTime.healthChange, teaTime.sound[0]);
             Destroy(gameObject);
         }
     }

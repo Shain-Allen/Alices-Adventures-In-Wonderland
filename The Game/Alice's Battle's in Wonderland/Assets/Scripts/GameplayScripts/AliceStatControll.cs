@@ -37,19 +37,35 @@ public class AliceStatControll : MonoBehaviour
         anim.SetInteger("Size", size);
     }
 
+    public void IncreaseNumOfHearts(int boost, AudioClip sound)
+    {
+        if (numOfHearts < hearts.Length)
+        {
+            numOfHearts += boost;
+        }
+        aSource.PlayOneShot(sound);
+    }
+
     public void IncreaseNumOfHearts(int boost)
     {
         if (numOfHearts < hearts.Length)
         {
             numOfHearts += boost;
         }
-        if(boost > -1)
-            HealthBoost(boost);
+    }
+
+    public void HealthBoost(int boost, AudioClip sound)
+    {
+        if(health < numOfHearts)
+        {
+            health += boost;
+        }
+        aSource.PlayOneShot(sound);
     }
 
     public void HealthBoost(int boost)
     {
-        if(health < numOfHearts)
+        if (health < numOfHearts)
         {
             health += boost;
         }
