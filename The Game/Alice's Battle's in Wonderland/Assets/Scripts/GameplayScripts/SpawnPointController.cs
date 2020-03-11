@@ -19,6 +19,19 @@ public class SpawnPointController : MonoBehaviour
     {
         int r = Random.Range(0, Enemys.Length);
 
+        if(esm.QueenTimer >= esm.QueenForcespawnTime)
+        {
+            for (int i = 0; i < Enemys.Length; i++)
+            {
+                if (Enemys[i].tag == "Queen")
+                {
+                    r = i;
+                    esm.QueenTimer = 0f;
+                }
+            }
+        }
+
+
         if(esm.numOfQueens == 1)
         {
             r = Random.Range(0, Enemys.Length);
@@ -28,6 +41,7 @@ public class SpawnPointController : MonoBehaviour
                 return;
             }
         }
+
 
         if(Enemys[r].tag == "Queen")
         {

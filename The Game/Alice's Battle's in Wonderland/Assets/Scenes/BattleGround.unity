@@ -1357,6 +1357,8 @@ MonoBehaviour:
   - {fileID: 2022561741}
   - {fileID: 171533010}
   spawnIntervel: 5
+  QueenForcespawnTime: 20
+  QueenTimer: 0
   numOfQueens: 0
 --- !u!4 &949905573
 Transform:

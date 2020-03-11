@@ -12,6 +12,8 @@ public class QueenMovement : MonoBehaviour
     Rigidbody2D rb;
     Animator anim;
 
+    bool Grew = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +32,14 @@ public class QueenMovement : MonoBehaviour
             rb.position = Vector3.MoveTowards(rb.position, growPoint, speed*Time.deltaTime);
         }
 
-        if (rb.position == growPoint)
+        if (Grew != true)
         {
-            anim.SetBool("Inlarge", true);
+            if (rb.position == growPoint)
+            {
+                //anim.SetBool("Inlarge", true);
+                anim.SetTrigger("inLarge");
+                Grew = true;
+            }
         }
     }
 }
